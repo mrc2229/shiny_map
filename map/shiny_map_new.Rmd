@@ -2,10 +2,10 @@
 title: "Interactive Map"
 runtime: shiny
 output: 
- html_document:
-    toc: true
-    toc_float: true
-    theme: flatly
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source_code: embed
 ---
 
 
@@ -193,7 +193,3 @@ This map allows users to select different years (1953-2019), demonstrating the c
 * **Yearly Max Temperature**: Darker areas represent a higher maximum temperature in that state across all 12 months of the year that was summarized. Hovering over each state will display the maximum temperature. Blank states means there is no data available in that state for that year.
 
 * **Yearly Total Precipitation**: Darker areas represent a higher total precipitation in that state across all 12 months of the year that was summarized. Hovering over each state will display the total precipitation. Blank states means there is no data available in that state for that year.
-You can embed Shiny inputs and outputs in your document. Outputs are automatically updated whenever inputs change.  This demonstrates how a standard R plot can be made interactive by wrapping it in the Shiny `renderPlot` function. The `selectInput` and `sliderInput` functions create the input widgets used to drive the plot.
-
-
-
